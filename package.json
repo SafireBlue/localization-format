@@ -1,0 +1,28 @@
+{
+  "name": "localization-format",
+  "version": "1.0.0",
+  "description": "Provides an abstract localization format and commonly used bilingual formats like .tmx and .xliff including parsers.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SafireBlue/localization-format.git"
+  },
+  "keywords": [],
+  "author": "Akira Ogawa <akira@safire.blue> (https://safire.blue)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SafireBlue/localization-format/issues"
+  },
+  "homepage": "https://github.com/SafireBlue/localization-format#readme",
+  "devDependencies": {
+    "ts-loader": "^6.0.4",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "tslint-loader": "^3.5.4",
+    "typescript": "^3.5.2"
+  }
+}
