@@ -1,11 +1,11 @@
 import ILocFormat from "../base/ILocFormat";
-import ILocFormatWriter from "../base/ILocFormatWriter";
+import ILocFormatGenerator from "../base/ILocFormatGenerator";
 import ISegment from "../base/ISegment";
 
-export default class TMXFormatWriter implements ILocFormatWriter {
-     public Write(format: ILocFormat<ISegment>): ILocFormat<ISegment> {
+export default class TMXFormatGenerator implements ILocFormatGenerator {
+     public async Generate(format: ILocFormat<ISegment>): Promise<string | null> {
         let text: string = format.SourceText!;
-        format.TranslatedSegments!.forEach((v, i) => {
+        format.Segments!.forEach((v, i) => {
             let counter: number = 0;
             // tslint:disable-next-line:max-line-length
             text = text.replace(/(<seg>)[\s\S]*?(<\/seg>)/gm,
@@ -18,7 +18,6 @@ export default class TMXFormatWriter implements ILocFormatWriter {
                 return result;
             });
         });
-        format.GeneratedTranslatedText = text;
-        return format;
+        return text;
     }
 }

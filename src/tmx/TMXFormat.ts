@@ -1,10 +1,11 @@
 import AbstractLocFormat from "../base/AbstractLocFormat";
+import TMXFormatGenerator from "./TMXFormatGenerator";
 import TMXFormatParser from "./TMXFormatParser";
 import TMXSegment from "./TMXSegment";
 
-export default class TMXFormat extends AbstractLocFormat<TMXSegment, TMXFormatParser> {
+export default class TMXFormat extends AbstractLocFormat<TMXSegment, TMXFormatParser, TMXFormatGenerator> {
     public FormatType: string = "tmx";
     constructor(sourceText: string) {
-        super(sourceText, TMXFormatParser);
+        super(sourceText, TMXFormatParser, TMXFormatGenerator);
     }
 }
