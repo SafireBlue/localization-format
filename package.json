@@ -13,7 +13,7 @@
   },
   "keywords": [],
   "author": "Akira Ogawa <akira@safire.blue> (https://safire.blue)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/SafireBlue/localization-format/issues"
   },
