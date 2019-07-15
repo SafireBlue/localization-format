@@ -1,10 +1,10 @@
 // import parser from "fast-xml-parser";
 import { isObject } from "util";
 import {parseString} from "xml2js";
-import ILocFormatReader from "../base/ILocFormatParser";
+import ILocFormatParser from "../base/ILocFormatParser";
 import TMXSegment from "./TMXSegment";
 
-export default class TMXFormatParser implements ILocFormatReader<TMXSegment> {
+export default class TMXFormatParser implements ILocFormatParser<TMXSegment> {
     public async Parse(sourceText: string): Promise<TMXSegment[] | null> {
         const result: TMXSegment[] | null = [];
         const matches: RegExpMatchArray = sourceText.match(/(?<=<seg>)[\s\S]*?(?=<\/seg>)/gm)!;
