@@ -7,7 +7,8 @@ import TMXSegment from "./TMXSegment";
 export default class TMXFormatParser implements ILocFormatParser<TMXSegment> {
     public async Parse(sourceText: string): Promise<TMXSegment[] | null> {
         const result: TMXSegment[] | null = [];
-        const matches: RegExpMatchArray = sourceText.match(/(?<=<seg>)[\s\S]*?(?=<\/seg>)/gm)!;
+        // (?<=<seg>) does not work in Safari
+        const matches: RegExpMatchArray = sourceText.match(/<seg>[\s\S]*?(?=<\/seg>)/gm)!;
         let jsonText: any;
         parseString(sourceText, (err, rtn) => jsonText = rtn);
         jsonText.tmx.body[0].tu.forEach((t: any, i: any) => {
@@ -19,13 +20,13 @@ export default class TMXFormatParser implements ILocFormatParser<TMXSegment> {
                                             FormatIndex: i,
                                             Source: {
                                                 // tslint:disable-next-line:max-line-length
-                                                Value: isObject(t.tuv[0].seg[0]) ? matches[i * 2] : t.tuv[0].seg[0],
+                                                Value: isObject(t.tuv[0].seg[0]) ? matches[i * 2].substring("<seg>".length) : t.tuv[0].seg[0],
                                                 // tslint:disable-next-line:object-literal-sort-keys
                                                 BeginOffSet: null,
                                             },
                                             Translation: {
                                                 // tslint:disable-next-line:max-line-length
-                                                Value: isObject(t.tuv[1].seg[0]) ? matches[(i * 2 + 1)] : t.tuv[1].seg[0],
+                                                Value: isObject(t.tuv[1].seg[0]) ? matches[(i * 2 + 1)].substring("<seg>".length) : t.tuv[1].seg[0],
                                                 // tslint:disable-next-line:object-literal-sort-keys
                                                 BeginOffSet: null,
                                             },

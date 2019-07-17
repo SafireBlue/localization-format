@@ -1,8 +1,8 @@
 import IText from "./IText";
 
 export default interface ISegment {
-    FormatIndex: number  | null;
+    FormatIndex?: number  | null;
     Source: IText;
     Translation: IText;
-    Props: {[index: string]: string} | null;
+    Props?: {[index: string]: string} | null;
 }
