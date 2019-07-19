@@ -2,7 +2,7 @@ import IText from "./IText";
 
 export default interface ISegment {
     FormatIndex?: number  | null;
-    Source: IText | string;
-    Translation: IText | string;
+    Source: IText;
+    Translation: IText;
     Props?: {[index: string]: string} | null;
 }
