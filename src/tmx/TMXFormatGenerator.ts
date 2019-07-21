@@ -12,7 +12,7 @@ export default class TMXFormatGenerator implements ILocFormatGenerator {
             (m, p1, p2) => {
                 let result: string = m;
                 if (i * 2 + 1 === counter) {
-                    result = p1 + v.Translation.Value + p2;
+                    result = p1 + v.Translation + p2;
                 }
                 counter++;
                 return result;
