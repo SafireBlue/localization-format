@@ -5,7 +5,7 @@ import TMXSegment from "./TMXSegment";
 
 export default class TMXFormat extends AbstractLocFormat<TMXSegment, TMXFormatParser, TMXFormatGenerator> {
     public FormatType: string = "tmx";
-    constructor(sourceText: string) {
+    constructor(sourceText: string, name?: string) {
         super(sourceText, TMXFormatParser, TMXFormatGenerator);
     }
 }
