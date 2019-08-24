@@ -1,4 +1,3 @@
-// import parser from "fast-xml-parser";
 import { isObject } from "util";
 import {parseString} from "xml2js";
 import ILocFormatParser from "../base/ILocFormatParser";
