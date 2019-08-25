@@ -1,3 +1,4 @@
+import { SegmentCheckResult } from "translation-checker";
 import IText from "./IText";
 
 export default interface ISegment {
@@ -5,4 +6,6 @@ export default interface ISegment {
     Source: string | IText;
     Translation: string | IText;
     Props?: {[index: string]: string} | null;
+    SegmentCheckResults?: SegmentCheckResult[];
+    Check(): Promise<void>;
 }
