@@ -1,6 +1,6 @@
 {
   "name": "localization-format",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Provides an abstract localization format and commonly used bilingual formats like .tmx and .xliff including parsers.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
