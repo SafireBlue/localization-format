@@ -38,12 +38,12 @@ export default abstract class AbstractLocFormat<
         this.GeneratedText = await this.generator.Generate(this);
     }
     public async Check(): Promise<void> {
-        const segCheck = (async () => this.Segments!.forEach((seg) => seg.Check()))();
+        const segsCheck = Promise.all(this.Segments!.map((seg) => seg.Check()));
         const result = await Promise.all([
             QADuplicateFromLocFormat(this, TargetValue.Source),
             QADuplicateFromLocFormat(this, TargetValue.Translation),
         ]).then((res) => res.filter((r) => r !== null));
-        await segCheck;
+        await segsCheck;
         this.LocFormatCheckResults = result as LocFormatCheckResult[];
     }
 }
