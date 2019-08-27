@@ -21,7 +21,7 @@ export default abstract class AbstractSegment implements ISegment {
             QADiffFromSegment(this, FindWhat.CamelCaseWords),
             QADiffFromSegment(this, FindWhat.Markups),
             QADiffFromSegment(this, FindWhat.Numbers),
-            QADiffFromSegment(this, FindWhat.Spaces),
+            QADiffFromSegment(this, FindWhat.Spaces, {excludesAsciiSpace: true}),
             QADiffFromSegment(this, FindWhat.Urls),
             QANoTranslationFromSegment(this),
             FindWordsFromSegment(this, FindWhat.RepeatedWords),
