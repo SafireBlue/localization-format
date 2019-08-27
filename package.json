@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@types/xml2js": "^0.4.4",
-    "translation-checker": "^1.0.16",
+    "translation-checker": "^1.0.17",
     "xml2js": "^0.4.19"
   }
 }
